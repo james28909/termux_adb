@@ -8,7 +8,7 @@ You can put one command in a shell script on your device.
 
 #this is for unrooted phone, and will skip pkg update and upgrade and will not install deps.
 
-bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g')
+bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 0.*PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g)
 ```
 save this in a .sh file in termux shortcuts directory. create a new 
 termux widget and link it to the shell script. Now you have a shortcut 
