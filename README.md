@@ -1,4 +1,20 @@
-first and foremost, this repo is pretty much just an example how to use adb directly in termux and also shows how host your own repo for and running scripts in termux directly from that repo and also shows different ways to execute them, depending on your env.
+First and foremost, this repo is pretty much just an example how to use adb directly in termux and also shows how host your own repo for and running scripts in termux directly from that repo and also shows different ways to execute them, depending on your env.
+
+***Please let me know if anything isnt working as expected***
+
+***You can put one command in a shell script on your device.
+```
+#!/data/data/com.termux/files/usr/bin/ bash
+
+#this is for unrooted phone, and will skip pkg update and upgrade and will not install deps.
+
+bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g')
+```
+save this in a .sh file in termux shortcuts directory. create a new 
+termux widget and link it to the shell script. Now you have a shortcut 
+to flip the rotation on yoru home screen!***
+
+---------------------------------------------------------------------------
 
 termux_adb.sh is just a script that allows you to use adb on the device itself instead of on a pc
 
