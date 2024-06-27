@@ -1,8 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
+#update termux env and add some dependencies that we need
+pkg update -y
+pkg upgrade -y
+pkg i iproute2 android-tools -y
 
-pkg update -y && pkg upgrade -y && pkg i iproute2 android-tools -y
+#get ip address
 ip=$(ip addr show wlan0 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
 
+#connect to and use adb shell
 adb connect $ip:5555
 adb -s $ip:5555 shell
 
