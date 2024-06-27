@@ -2,21 +2,6 @@ First and foremost, this repo is pretty much just an example how to use adb dire
 
 ***Please let me know if anything isnt working as expected***
 
-You can put one command in a shell script on your device.
-```
-#!/data/data/com.termux/files/usr/bin/ bash
-
-# this example will flip your rotation to landscape. it is up to the user
-# to expand from this example and  create another shell script that flips the
-# orientation back to portrait.
-
-# this is for unrooted phone, and will skip pkg update and upgrade and will not install deps.
-
-bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 0.*PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g)
-```
-save this in a .sh file in termux shortcuts directory. create a new 
-termux widget and link it to the shell script. Now you have a shortcut 
-to flip the rotation on yoru home screen!
 
 ---------------------------------------------------------------------------
 
@@ -50,3 +35,21 @@ if you want to skip pkg update and pkg upgrade and deps:
 
 if you want to skip pkg update and pkg upgrade and deps on rooted samsung:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/pkg update -y//g' | sed 's/pkg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/user-rotation/set-user-rotation/g' | sed 's/adb connect $ip:5555//g')```
+
+---------------------------------------------------------------------------------
+
+You can put one of these commands above into a shell script on your device.
+```
+#!/data/data/com.termux/files/usr/bin/ bash
+
+# this example will flip your rotation to landscape. it is up to the user
+# to expand from this example and  create another shell script that flips the
+# orientation back to portrait.
+
+# this is for unrooted phone, and will skip pkg update and upgrade and will not install deps.
+
+bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 0.*PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g)
+```
+save the above example into a .sh file in the termux shortcuts directory (google it). 
+create a new termux widget and link it to the shell script. Now you have a shortcut 
+to flip the rotation on yoru home screen! 
