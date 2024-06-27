@@ -33,7 +33,7 @@ if you want to flip back to portrait on rooted samsung:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/sleep 3//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 1.*LANDSCAPE"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 1//g' | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/user-rotation/set-user-rotation/g')```
 
 if you want to skip pkg update and pkg upgrade and deps:
-```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g') ```
+```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/pkg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g') ```
 
 if you want to skip pkg update and pkg upgrade and deps on rooted samsung:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/pkg update -y//g' | sed 's/pkg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/user-rotation/set-user-rotation/g' | sed 's/adb connect $ip:5555//g')```
@@ -52,7 +52,7 @@ You can put one of these commands above into a shell script on your device.
 
 # this is for unrooted phone, and will skip pkg update and upgrade and will not install deps.
 
-bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 0.*PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g)
+bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/pkg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 0.*PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g)
 ```
 save the above example into a .sh file in the termux shortcuts directory (google it). 
 create a new termux widget and link it to the shell script. Now you have a shortcut 
