@@ -2,7 +2,7 @@ First and foremost, this repo is pretty much just an example how to use adb dire
 
 ***Please let me know if anything isnt working as expected***
 
-***You can put one command in a shell script on your device.
+You can put one command in a shell script on your device.
 ```
 #!/data/data/com.termux/files/usr/bin/ bash
 
@@ -12,7 +12,7 @@ bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/term
 ```
 save this in a .sh file in termux shortcuts directory. create a new 
 termux widget and link it to the shell script. Now you have a shortcut 
-to flip the rotation on yoru home screen!***
+to flip the rotation on yoru home screen!
 
 ---------------------------------------------------------------------------
 
