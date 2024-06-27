@@ -6,7 +6,11 @@ You can put one command in a shell script on your device.
 ```
 #!/data/data/com.termux/files/usr/bin/ bash
 
-#this is for unrooted phone, and will skip pkg update and upgrade and will not install deps.
+# this example will flip your rotation to landscape. it is up to the user
+# to expand from this example and  create another shell script that flips the
+# orientation back to portrait.
+
+# this is for unrooted phone, and will skip pkg update and upgrade and will not install deps.
 
 bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 0.*PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g)
 ```
