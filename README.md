@@ -10,7 +10,7 @@ this command in termux instead of the one above:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/adb connect $ip:5555//g')```
 
 if youre using rooted samsung, try this command in termux:
-```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/user-rotation/set-user-rotation/g')```
+```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/user-rotation/set-user-rotation/g' | sed 's/adb connect $ip:5555//g')```
 
 if youre on an unrooted samsung try this to use adb commands in termux:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/user-rotation/set-user-rotation/g')```
