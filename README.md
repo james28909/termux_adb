@@ -1,8 +1,12 @@
-this is a script that allows you to use adb on the device itself instead of on a pc
+first and foremost, this repo is pretty much just an example how to use adb directly in termux and also shows how host your own repo for and running scripts in termux directly from that repo and also shows different ways to execute them, depending on your env.
 
-please note that you MUST connect to a pc with a working adb installation and run ```adb tcpip 5555``` then disconnect the usb cable from the device.
+termux_adb.sh is just a script that allows you to use adb on the device itself instead of on a pc
 
-once you do that, run this script in termux as is for adb shell commands:
+PLEASE NOTE THAT YOU MUST CONNECT YOUR DEVICE TO YOUR PC AND RUN ```adb tcpip 5555``` THEN DISCONNECT THE USB CABLE FROM THE DEVICE.
+
+once you do that:
+
+run this script in termux as is for adb shell commands:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh)```
 
 you can also run this script with root privleges as well from termux by using
