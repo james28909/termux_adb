@@ -5,6 +5,8 @@ First and foremost, this repo is pretty much just an example how to use adb dire
 
 ---------------------------------------------------------------------------
 
+
+
 termux_adb.sh is just a script that allows you to use adb on the device itself instead of on a pc
 
 PLEASE NOTE THAT YOU MUST CONNECT YOUR DEVICE TO YOUR PC AND RUN ```adb tcpip 5555``` THEN DISCONNECT THE USB CABLE FROM THE DEVICE.
@@ -37,6 +39,8 @@ if you want to skip pkg update and pkg upgrade and deps on rooted samsung:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/pkg update -y//g' | sed 's/pkg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g' | sed 's/user-rotation/set-user-rotation/g' | sed 's/adb connect $ip:5555//g')```
 
 ---------------------------------------------------------------------------------
+
+
 
 You can put one of these commands above into a shell script on your device.
 ```
