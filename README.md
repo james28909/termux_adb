@@ -15,5 +15,14 @@ if youre using rooted samsung, try this command in termux:
 if youre on an unrooted samsung try this to use adb commands in termux:
 ```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/user-rotation/set-user-rotation/g')```
 
-if you want to only flip to landscape on samsung, search for the portrait command and delete it:
-```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/sleep 3//g' | sed 's/echo " run 'adb -s $ip:5555 shell wm user-rotation lock 0' for PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g' | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/user-rotation/set-user-rotation/g')```
+if you want to only flip to landscape on rooted samsung, search for the portrait command and delete it:
+```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/sleep 3//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 0.*PORTRAIT"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 0//g' | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/user-rotation/set-user-rotation/g')```
+
+if you want to flip back to portrait on rooted samsung:
+```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/sleep 3//g' | sed 's/echo.*adb -s $ip:5555 shell wm user-rotation lock 1.*LANDSCAPE"//g' | sed 's/adb -s $ip:5555 shell wm user-rotation lock 1//g' | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/user-rotation/set-user-rotation/g')```
+
+if you want to skip pkg update and pkg upgrade and deps:
+```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g') ```
+
+if you want to skip pkg update and pkg upgrade and deps on rooted samsung:
+```bash <(curl -s https://raw.githubusercontent.com/james28909/termux_adb/main/termux_adb.sh | sed 's/adb -s $ip:5555 shell/su -c/g' | sed 's/pkg update -y//g' | sed 's/okg upgrade -y//g' | sed 's/pkg i iproute2 android-tools -y//g')```
