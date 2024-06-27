@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
+
 #update termux env and add some dependencies that we need
 pkg update -y
 pkg upgrade -y
